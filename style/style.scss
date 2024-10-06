@@ -1,0 +1,228 @@
+$backgroundColor : rgb(230 , 230, 230);
+$btnNumberColor : rgb(255, 255, 255);
+$otherBtnColor : rgb(240,240,240);
+$hoverBtnColor : rgb(207,207,207);
+
+*{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+
+
+button{
+    all: unset;
+}
+
+.mainContiner{
+    overflow: hidden;
+    background-color: $backgroundColor;
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    grid-template-rows: 5% 35% 60%;
+
+    grid-template-areas: 
+    "header header"
+    "displayBar rightBar"
+    "keyboard rightBar";
+
+    @media screen and ( max-width: 740px){
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 5% 35% 60%; 
+    }
+
+    @media screen and ( max-width: 500px){
+
+        grid-template-areas: 
+        "header"
+        "displayBar"
+        "keyboard";
+        grid-template-columns: 100%;
+        grid-template-rows: 5% 35% 1fr;
+    }
+
+    @media screen and ( max-height: 410px){
+        overflow: scroll;
+        min-height: 410px;
+    }
+
+
+
+    .header{
+        grid-area: header;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .headerTitle{
+            //header title
+        }
+        .windowsController{
+            width: 35vw;
+            max-width: 150px;
+            display: flex;
+            flex-direction: row;
+
+            button{
+                flex-grow: 1;
+
+               
+            }
+
+            .btnCloseWindow:hover{
+                    background-color: red;
+                    color: white;
+            }
+
+            .btnMinimizeWindow:hover{
+                background-color: $hoverBtnColor;
+            }
+
+            .btnResizeWindow:hover{
+                background-color: $hoverBtnColor;
+            }
+            
+        }
+    }
+
+    .rightBar{
+        grid-area: rightBar;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @media screen and ( max-width: 500px){
+
+            display: none;
+        }
+        :first-child{
+            margin-left: 5px;
+        }
+
+        .rightBarTitle{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            gap: 10%;
+            :first-child{
+                text-decoration: underline 3px solid orange;
+                text-underline-offset: 6px;
+                transition: 0.01s;
+            }
+        }
+
+        .rightBarDisplaySection{
+            flex-grow: 1;
+
+            *{
+                margin: 0;
+                padding: 0;
+                margin-left: 5px;
+                text-align: left;
+            }
+        }
+
+    }
+
+    .DisplayBar{
+        grid-area: displayBar;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .displayBarTitle{
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+
+            .humbergerMenuBtn{
+                flex-grow: 1;
+                max-width: 40px;
+
+                &:hover{
+                    background-color: $hoverBtnColor;
+                }
+            }
+
+        }
+
+        .mainDisplay{
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            padding-right: 2%;
+            flex-grow: 1;
+        }
+
+        .memoryBtns{
+            max-width: 70%;
+            display: flex;
+            justify-content: left;
+
+            button{
+                flex: auto;
+                margin-bottom:  2px;
+                max-width: 80px;
+                flex-grow: 1;
+
+                &:hover{
+                    background-color:  $hoverBtnColor;
+                }
+            }
+
+        }
+    }
+
+    .keyborad{
+        grid-area: keyboard;
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        gap: 3px;
+
+        @media screen and (max-width: 1024px),
+               screen and (max-height: 600px) {
+            grid-template-columns: repeat(4,1fr);
+            
+            :nth-child(16){
+                display: none;
+            }
+
+            :nth-child(6){
+                grid-area: 1 / 2 / 2 / 3;
+            }
+
+            :nth-child(11){
+                grid-area: 1 / 3 / 2/ 4;
+            }
+
+            :nth-child(21){
+                grid-area: 1 / 4 / 2/ 5;
+            }
+
+            
+
+            
+        }
+        
+        button{
+            box-sizing: border-box;
+            background-color: $otherBtnColor;
+            img{
+                height: 15px;
+            }
+        }
+
+        button:hover{
+            background-color: $backgroundColor;
+            transition: 0.2s;
+        }
+        .btnNumber{
+            background-color: $btnNumberColor;
+        }
+    }
+
+}
+
