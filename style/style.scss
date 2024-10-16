@@ -1,12 +1,31 @@
-$backgroundColor : rgb(230 , 230, 230);
-$btnNumberColor : rgb(255, 255, 255);
-$otherBtnColor : rgb(240,240,240);
-$hoverBtnColor : rgb(207,207,207);
+
+
+:root{
+    --backgroundColor: rgb(230, 230, 230);
+    --btnNumberColor: rgb(250, 250, 250);
+    --otherBtnColor: rgb(240, 240, 240);
+    --hoverBtnColor: rgba(159, 158, 158, 0.4901960784);
+    --borderRadius: 0rem;
+    --font-family: sans-serif;
+    --scale : 1;
+}
+$backgroundColor : var(--backgroundColor);
+$btnNumberColor : var(--btnNumberColor);
+$otherBtnColor : var(--otherBtnColor);
+$hoverBtnColor : var(--hoverBtnColor);
+$fontFamily: var(--font-family);
+$borderRadius: var(--borderRadius);
+$scale: var(--scale);
+
+
+
 
 *{
     padding: 0;
     margin: 0;
     text-align: center;
+    font-family: $fontFamily;
+    
 }
 
 
@@ -18,6 +37,7 @@ button{
 .mainContiner{
     overflow: hidden;
     background-color: $backgroundColor;
+    
     width: 100vw;
     height: 100vh;
 
@@ -164,7 +184,7 @@ button{
 
             button{
                 flex: auto;
-                margin-bottom:  2px;
+                padding: 1% 0;
                 max-width: 80px;
                 flex-grow: 1;
 
@@ -210,6 +230,7 @@ button{
         button{
             box-sizing: border-box;
             background-color: $otherBtnColor;
+            border-radius: $borderRadius;
             img{
                 height: 15px;
             }
@@ -218,11 +239,44 @@ button{
         button:hover{
             background-color: $backgroundColor;
             transition: 0.2s;
+            scale: $scale;
         }
         .btnNumber{
             background-color: $btnNumberColor;
         }
     }
 
+}
+
+
+@mixin Themes($color){
+    background-color: $color;
+}
+.blueTheme{
+    --backgroundColor: #bcdefb;
+    --btnNumberColor: rgba(111, 208, 249, 0.8980392157);
+    --otherBtnColor: #4fb3f6;
+    --hoverBtnColor: #418ac6;
+    --borderRadius: 2rem 0;
+    --font-family: sans-serif;
+}
+
+.greenTheme{
+    --backgroundColor: #BBD6B8;
+    --btnNumberColor: #aec2b6;
+    --otherBtnColor: #94AF9F;
+    --hoverBtnColor: #dbe4c6;
+    --borderRadius: 1rem;
+    --font-family: monospace;
+}
+
+.myTheme{
+    --backgroundColor: #fd68d0;
+    --btnNumberColor: rgba(249, 111, 249, 0.898);
+    --otherBtnColor: #fdb3f6;
+    --hoverBtnColor: #fd8ac6;
+    --borderRadius: 5rem 5rem 0 0;
+    --font-family: cursive;
+    --scale : 1.2;
 }
 

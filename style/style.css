@@ -1,7 +1,18 @@
+:root {
+  --backgroundColor: rgb(230, 230, 230);
+  --btnNumberColor: rgb(250, 250, 250);
+  --otherBtnColor: rgb(240, 240, 240);
+  --hoverBtnColor: rgba(159, 158, 158, 0.4901960784);
+  --borderRadius: 0rem;
+  --font-family: sans-serif;
+  --scale: 1;
+}
+
 * {
   padding: 0;
   margin: 0;
   text-align: center;
+  font-family: var(--font-family);
 }
 
 button {
@@ -10,7 +21,7 @@ button {
 
 .mainContiner {
   overflow: hidden;
-  background-color: rgb(230, 230, 230);
+  background-color: var(--backgroundColor);
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -57,10 +68,10 @@ button {
   color: white;
 }
 .mainContiner .header .windowsController .btnMinimizeWindow:hover {
-  background-color: rgb(207, 207, 207);
+  background-color: var(--hoverBtnColor);
 }
 .mainContiner .header .windowsController .btnResizeWindow:hover {
-  background-color: rgb(207, 207, 207);
+  background-color: var(--hoverBtnColor);
 }
 .mainContiner .rightBar {
   grid-area: rightBar;
@@ -113,7 +124,7 @@ button {
   max-width: 40px;
 }
 .mainContiner .DisplayBar .displayBarTitle .humbergerMenuBtn:hover {
-  background-color: rgb(207, 207, 207);
+  background-color: var(--hoverBtnColor);
 }
 .mainContiner .DisplayBar .mainDisplay {
   display: flex;
@@ -129,12 +140,12 @@ button {
 }
 .mainContiner .DisplayBar .memoryBtns button {
   flex: auto;
-  margin-bottom: 2px;
+  padding: 1% 0;
   max-width: 80px;
   flex-grow: 1;
 }
 .mainContiner .DisplayBar .memoryBtns button:hover {
-  background-color: rgb(207, 207, 207);
+  background-color: var(--hoverBtnColor);
 }
 .mainContiner .keyborad {
   grid-area: keyboard;
@@ -161,15 +172,45 @@ button {
 }
 .mainContiner .keyborad button {
   box-sizing: border-box;
-  background-color: rgb(240, 240, 240);
+  background-color: var(--otherBtnColor);
+  border-radius: var(--borderRadius);
 }
 .mainContiner .keyborad button img {
   height: 15px;
 }
 .mainContiner .keyborad button:hover {
-  background-color: rgb(230, 230, 230);
+  background-color: var(--backgroundColor);
   transition: 0.2s;
+  scale: var(--scale);
 }
 .mainContiner .keyborad .btnNumber {
-  background-color: rgb(255, 255, 255);
+  background-color: var(--btnNumberColor);
+}
+
+.blueTheme {
+  --backgroundColor: #bcdefb;
+  --btnNumberColor: rgba(111, 208, 249, 0.8980392157);
+  --otherBtnColor: #4fb3f6;
+  --hoverBtnColor: #418ac6;
+  --borderRadius: 2rem 0;
+  --font-family: sans-serif;
+}
+
+.greenTheme {
+  --backgroundColor: #BBD6B8;
+  --btnNumberColor: #aec2b6;
+  --otherBtnColor: #94AF9F;
+  --hoverBtnColor: #dbe4c6;
+  --borderRadius: 1rem;
+  --font-family: monospace;
+}
+
+.myTheme {
+  --backgroundColor: #fd68d0;
+  --btnNumberColor: rgba(249, 111, 249, 0.898);
+  --otherBtnColor: #fdb3f6;
+  --hoverBtnColor: #fd8ac6;
+  --borderRadius: 5rem 5rem 0 0;
+  --font-family: cursive;
+  --scale: 1.2;
 }/*# sourceMappingURL=style.css.map */
