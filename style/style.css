@@ -19,7 +19,12 @@ button {
   all: unset;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .mainContiner {
+  transition: 2s;
   overflow: hidden;
   background-color: var(--backgroundColor);
   width: 100vw;
@@ -53,6 +58,9 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.mainContiner .header .headerTitle {
+  padding-left: 7px;
 }
 .mainContiner .header .windowsController {
   width: 35vw;
@@ -99,7 +107,11 @@ button {
   text-underline-offset: 6px;
   transition: 0.01s;
 }
+.mainContiner .rightBar .rightBarTitle *:hover {
+  cursor: pointer;
+}
 .mainContiner .rightBar .rightBarDisplaySection {
+  padding-top: 5%;
   flex-grow: 1;
 }
 .mainContiner .rightBar .rightBarDisplaySection * {
@@ -118,6 +130,7 @@ button {
   display: flex;
   flex-direction: row;
   gap: 15px;
+  width: 50%;
 }
 .mainContiner .DisplayBar .displayBarTitle .humbergerMenuBtn {
   flex-grow: 1;
@@ -144,9 +157,16 @@ button {
   padding: 1% 0;
   max-width: 80px;
   flex-grow: 1;
+  border-radius: 20px;
 }
 .mainContiner .DisplayBar .memoryBtns button:hover {
   background-color: var(--hoverBtnColor);
+}
+.mainContiner .DisplayBar .memoryBtns .MRBtn {
+  color: gray;
+}
+.mainContiner .DisplayBar .memoryBtns .MCBtn {
+  color: gray;
 }
 .mainContiner .keyborad {
   grid-area: keyboard;
@@ -172,6 +192,7 @@ button {
   }
 }
 .mainContiner .keyborad button {
+  transition: 0.2s;
   box-sizing: border-box;
   background-color: var(--otherBtnColor);
   border-radius: var(--borderRadius);
@@ -198,9 +219,9 @@ button {
 }
 
 .greenTheme {
-  --backgroundColor: #BBD6B8;
+  --backgroundColor: #bbd6b8;
   --btnNumberColor: #aec2b6;
-  --otherBtnColor: #94AF9F;
+  --otherBtnColor: #94af9f;
   --hoverBtnColor: #dbe4c6;
   --borderRadius: 1rem;
   --font-family: monospace;
